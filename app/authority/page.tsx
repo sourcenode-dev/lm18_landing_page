@@ -28,21 +28,26 @@ const app = {
   desc: "Admin dashboard, metrics, time correction, branch schedules, overtime, payroll reports and audit console.",
   downloads: {
     android: [
-      { label: "Download APK (arm64)", href: "#", primary: true },
-      { label: "Google Play", href: "#", primary: false },
+      {
+        label: "Download APK (Android)",
+        href: "https://www.mediafire.com/file/cn0xynsnvq3bcbm/LM18-Authority-Android.apk/file",
+        primary: true,
+        download: false,
+      },
+      { label: "Google Play", href: "#", primary: false, download: false },
     ],
-    ios: [{ label: "App Store", href: "#", primary: true }],
+    ios: [{ label: "App Store", href: "#", primary: true, download: false }],
     macos: [
-      { label: "Download for Apple Silicon", href: "#", primary: true },
-      { label: "Download for Intel", href: "#", primary: false },
+      { label: "Download for Apple Silicon", href: "#", primary: true, download: false },
+      { label: "Download for Intel", href: "#", primary: false, download: false },
     ],
     windows: [
-      { label: "Download for x64", href: "#", primary: true },
-      { label: "Download for ARM64", href: "#", primary: false },
+      { label: "Download for x64", href: "#", primary: true, download: false },
+      { label: "Download for ARM64", href: "#", primary: false, download: false },
     ],
     linux: [
-      { label: "Download for x64", href: "#", primary: true },
-      { label: "Download for ARM64", href: "#", primary: false },
+      { label: "Download for x64", href: "#", primary: true, download: false },
+      { label: "Download for ARM64", href: "#", primary: false, download: false },
     ],
   },
   requirements: {
@@ -149,6 +154,9 @@ export default function AuthorityDownloadPage() {
                 <a
                   key={d.label}
                   href={d.href}
+                  download={d.download ? true : undefined}
+                  target={d.href.startsWith("http") ? "_blank" : undefined}
+                  rel={d.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={`inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold transition ${
                     d.primary
                       ? "bg-[#00A2E8] text-white hover:bg-[#0089c7]"

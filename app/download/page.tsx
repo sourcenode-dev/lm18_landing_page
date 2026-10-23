@@ -25,10 +25,15 @@ const app = {
   desc: "QR-verified attendance, selfie capture, live elapsed timer, buddy time-in, payslip and activity history.",
   downloads: {
     android: [
-      { label: "Download APK (arm64)", href: "#", primary: true },
-      { label: "Google Play", href: "#", primary: false },
+      {
+        label: "Download APK (Android)",
+        href: "https://www.mediafire.com/file/h953dnav8uthvyc/LM18-Construction-Android.apk/file",
+        primary: true,
+        download: false,
+      },
+      { label: "Google Play", href: "#", primary: false, download: false },
     ],
-    ios: [{ label: "App Store", href: "#", primary: true }],
+    ios: [{ label: "App Store", href: "#", primary: true, download: false }],
   },
   requirements: {
     android: "Android 8.0 (Oreo) or later",
@@ -132,6 +137,9 @@ export default function DownloadPage() {
                 <a
                   key={d.label}
                   href={d.href}
+                  download={d.download ? true : undefined}
+                  target={d.href.startsWith("http") ? "_blank" : undefined}
+                  rel={d.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={`inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold transition ${
                     d.primary
                       ? "bg-[#00A2E8] text-white hover:bg-[#0089c7]"
