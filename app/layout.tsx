@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Download LM18 Construction",
   description:
-    "Download the LM18 Construction app and LM18 Authority app.",
+    "Download the LM18 Construction app.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

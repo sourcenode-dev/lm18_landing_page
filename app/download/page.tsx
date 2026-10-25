@@ -27,7 +27,7 @@ const app = {
     android: [
       {
         label: "Download APK (Android)",
-        href: "https://www.mediafire.com/file/9sh3i8gjlvv060o/LM18-Construction-Android-Build.apk/file",
+        href: "https://www.mediafire.com/file/qnr3q512a6zhg9v/lm18-construction-build.apk/file",
         primary: true,
         download: false,
       },
@@ -52,11 +52,7 @@ export default function DownloadPage() {
           <div className="flex items-center gap-3">
             <Image src="/lm18_icon.png" alt="LM18" width={32} height={32} className="rounded-lg" />
             <span className="text-base font-semibold tracking-tight">LM18 Construction</span>
-          </div>
-          <Link href="/authority" className="text-sm font-medium text-zinc-500 transition hover:text-zinc-900">
-            Authority
-          </Link>
-        </div>
+          </div></div>
       </header>
 
       {/* Hero */}
@@ -157,28 +153,6 @@ export default function DownloadPage() {
             {app.requirements[platform]}
           </div>
         </div>
-
-        {/* Authority CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-6 sm:flex-row"
-        >
-          <div>
-            <h4 className="text-sm font-semibold">Looking for the Authority?</h4>
-            <p className="mt-1 text-sm text-zinc-500">
-              Available for Android, iOS, macOS, Windows and Linux.
-            </p>
-          </div>
-          <Link
-            href="/authority"
-            className="inline-flex h-10 shrink-0 items-center justify-center rounded-full border border-zinc-300 px-5 text-sm font-semibold text-zinc-700 transition hover:border-[#00A2E8] hover:text-[#00A2E8]"
-          >
-            View downloads
-          </Link>
-        </motion.div>
       </section>
 
       {/* Footer */}
