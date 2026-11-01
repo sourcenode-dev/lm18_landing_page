@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-export const runtime = "nodejs";
-
 /**
  * Streams the APK from Cloudflare R2 by redirecting to a short-lived,
  * presigned URL that forces a browser download. All R2 settings come from
