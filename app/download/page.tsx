@@ -27,9 +27,9 @@ const app = {
     android: [
       {
         label: "Download APK (Android)",
-        href: "https://www.mediafire.com/file/qnr3q512a6zhg9v/lm18-construction-build.apk/file",
+        href: "/api/download",
         primary: true,
-        download: false,
+        download: true,
       },
       { label: "Google Play", href: "#", primary: false, download: false },
     ],
