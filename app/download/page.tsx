@@ -29,7 +29,7 @@ const app = {
         label: "Download APK (Android)",
         href: "/api/download",
         primary: true,
-        download: true,
+        download: "lm18.apk",
       },
       { label: "Google Play", href: "#", primary: false, download: false },
     ],
@@ -133,7 +133,7 @@ export default function DownloadPage() {
                 <a
                   key={d.label}
                   href={d.href}
-                  download={d.download ? true : undefined}
+                  download={d.download === false ? undefined : d.download}
                   target={d.href.startsWith("http") ? "_blank" : undefined}
                   rel={d.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={`inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold transition ${
